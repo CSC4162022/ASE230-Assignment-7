@@ -61,35 +61,6 @@ class AuthHelper
         return false;
     }
 
-    static function signin($email, $password, $usersFile, $bannedUsersFile){
-        print_r('called');
-        /*
-        if(!file_exists($usersFile) || !file_exists($bannedUsersFile)) return false;
-        if (self::userIsBanned($email, $bannedUsersFile) == true) die('You are banned');
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            print_r('Signin EMAIL INVALID');
-            return false;
-        }
-        //password doesn't contain at least 2 symbols or isn't long enough
-        else if (!preg_match('/[\'^£$%&*!()}{@#~?><>,|=_+¬-]/', $password) || strlen($password) < 8)
-        {
-            print_r('Signin EMAIL INVALID');
-            return false;
-        }
-
-        $usersLine = fopen($usersFile, 'r');  //open for reading
-        while( false !== ( $data = fgetcsv($usersLine))) {
-            if($data[0] == $email && password_verify($password, $data[1])) {
-                $_SESSION['email'] = $email;
-                $_SESSION['password'] = $password;
-                $_SESSION['logged']=true;
-                return true;
-            }
-        }
-        return false;
-        */
-    }
-
     static function emailExists($email, $usersFile) {
 
         $usersLine = fopen($usersFile, 'r');  //open for reading
